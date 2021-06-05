@@ -31,9 +31,9 @@ export const Token = ({ id, uri, registry }) => {
         div {
           position: relative;
           display: inline-block;
-          height: 140px;
-          width: 140px;
-          margin: 5px;
+          height: 200px;
+          width: 200px;
+          margin: 10px;
           overflow: hidden;
         }
 

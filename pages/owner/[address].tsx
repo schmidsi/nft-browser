@@ -1,12 +1,16 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
-import { useNFTs } from '../hooks/useNFTs'
-import { Token } from '../components/Token'
-import { Form } from '../components/Form'
+import { Form } from '../../components/Form'
+import { Token } from '../../components/Token'
+import { useNFTs } from '../../hooks/useNFTs'
 
 const Home = () => {
+  const router = useRouter()
+  const { address } = router.query
+
   const { loading, error, nfts } = useNFTs({
-    address: '0x546457BBddf5e09929399768ab5a9d588cb0334d',
+    address: address as string,
   })
 
   return (
