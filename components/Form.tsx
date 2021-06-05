@@ -4,14 +4,20 @@ import { useForm } from 'react-hook-form'
 
 const EthereumAddressRegEx = /^0x[a-fA-F0-9]{40}$/
 
-export const Form = () => {
+export const Form = ({ initialAddress }) => {
   const router = useRouter()
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors, isDirty },
-  } = useForm({ mode: 'all' })
+  } = useForm({
+    mode: 'all',
+    defaultValues: {
+      address: initialAddress,
+    },
+  })
+
   const onSubmit = (data) => console.log(data)
   const address = watch('address')
 
@@ -26,6 +32,7 @@ export const Form = () => {
       Enter an ethereum address:
       <input
         type="text"
+        defaultValue={initialAddress}
         {...register('address', { pattern: EthereumAddressRegEx, required: true })}
       ></input>
       <style jsx>{`

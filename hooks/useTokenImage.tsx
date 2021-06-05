@@ -18,7 +18,7 @@ export const useTokenImage = (uri) => {
             setImage(text)
           }
         },
-        (reason) => console.warn(reason),
+        (reason) => console.warn(uri, reason),
       )
     }
   }, [uri])
