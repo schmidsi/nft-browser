@@ -13,9 +13,6 @@ export const Form = ({ initialAddress = '' }) => {
     formState: { errors, isDirty },
   } = useForm({
     mode: 'all',
-    defaultValues: {
-      address: initialAddress,
-    },
   })
 
   const onSubmit = (data) => console.log(data)
@@ -33,6 +30,7 @@ export const Form = ({ initialAddress = '' }) => {
       <input
         type="text"
         defaultValue={initialAddress}
+        placeholder="0xdeadbeef1337..."
         {...register('address', { pattern: EthereumAddressRegEx, required: true })}
       ></input>
       <style jsx>{`

@@ -16,6 +16,8 @@ const Home = () => {
 
       <main>
         <Form />
+        <h1>Last transferred NFTs:</h1>
+        <p>It automatically refreshes every block ...</p>
         {nfts.map((nft) => (
           <Token key={nft.transferId} {...nft} />
         ))}

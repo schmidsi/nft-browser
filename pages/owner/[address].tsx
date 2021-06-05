@@ -2,10 +2,11 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import { Form } from '../../components/Form'
+import { Owner } from '../../components/Owner'
 import { Token } from '../../components/Token'
 import { useNFTsOfOwner } from '../../hooks/useNFTsOfOwner'
 
-const Owner = () => {
+const OwnerPage = () => {
   const router = useRouter()
   const { address } = router.query
 
@@ -22,6 +23,9 @@ const Owner = () => {
 
       <main>
         <Form initialAddress={address as string} />
+        <h1>
+          NFTs owned by <Owner address={address} />:
+        </h1>
         {nfts.map((nft) => (
           <Token key={nft.id} {...nft} />
         ))}
@@ -30,4 +34,4 @@ const Owner = () => {
   )
 }
 
-export default Owner
+export default OwnerPage

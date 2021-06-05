@@ -9,16 +9,22 @@ export const Token = ({ id, uri, registry, identifier, owner }) => {
   return (
     <Link href={`/token/${id}`}>
       <a>
-        <div className="info">
-          <div>
-            ${registry?.symbol}: #{identifier}
+        <div className="holder">
+          <div className="info">
+            <div>
+              ${registry?.symbol}: #{identifier}
+            </div>
+            <div className="owner">
+              <Owner address={owner?.id} />
+            </div>
           </div>
-          <div className="owner">
-            <Owner address={owner?.id} />
-          </div>
-        </div>
 
-        <img src={image} />
+          {image && (
+            <div className="image">
+              <img src={image} />
+            </div>
+          )}
+        </div>
         <style jsx>{`
           a {
             position: relative;
@@ -28,6 +34,14 @@ export const Token = ({ id, uri, registry, identifier, owner }) => {
             margin: 10px;
             overflow: hidden;
             text-align: center;
+          }
+
+          .holder {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
           }
 
           a:hover {
@@ -50,8 +64,21 @@ export const Token = ({ id, uri, registry, identifier, owner }) => {
             margin-top: 10px;
           }
 
-          a:hover div {
+          a:hover .info {
             z-index: 10;
+          }
+
+          .image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 5;
+            background-color: #151c42;
           }
 
           img {
