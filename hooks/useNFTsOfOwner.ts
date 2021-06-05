@@ -1,6 +1,6 @@
 import { gql, useQuery } from '@apollo/client'
 
-export const useNFTs = ({ address }: { address: String }) => {
+export const useNFTsOfOwner = ({ address }: { address: String }) => {
   const { loading, error, data } = useQuery(
     gql`
       query NFTs($address: String!) {

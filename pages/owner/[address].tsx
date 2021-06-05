@@ -3,20 +3,20 @@ import { useRouter } from 'next/router'
 
 import { Form } from '../../components/Form'
 import { Token } from '../../components/Token'
-import { useNFTs } from '../../hooks/useNFTs'
+import { useNFTsOfOwner } from '../../hooks/useNFTsOfOwner'
 
-const Home = () => {
+const Owner = () => {
   const router = useRouter()
   const { address } = router.query
 
-  const { loading, error, nfts } = useNFTs({
+  const { loading, error, nfts } = useNFTsOfOwner({
     address: address as string,
   })
 
   return (
     <div>
       <Head>
-        <title>NFT Browser</title>
+        <title>NFT Browser: {address}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -30,4 +30,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Owner
