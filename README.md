@@ -1,2 +1,3 @@
-- Hashmasker: 0x290FbE4d4745f6B5267c209C92C8D81CebB5E9f0
-- Schmidsi: 0x546457bbddf5e09929399768ab5a9d588cb0334d
+# NFT Browser
+
+Simple front-end to the amazing [EIP721 Subgraph](https://thegraph.com/explorer/subgraph/amxx/eip721-subgraph) by @amxx.
