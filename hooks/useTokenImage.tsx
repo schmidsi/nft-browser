@@ -1,18 +1,20 @@
 import { useEffect, useState } from 'react'
 import fetch from 'cross-fetch'
 
+import ipfsReplacer from '../utils/ipfsReplacer'
+
 export const useTokenImage = ({ id = '', uri = '' } = {}) => {
   const [image, setImage] = useState('')
 
   useEffect(() => {
     if (uri) {
-      fetch(uri).then(
+      fetch(ipfsReplacer(uri)).then(
         async (response) => {
           const text = await response.text()
           try {
             const json = JSON.parse(text)
 
-            setImage(json.image || json.image_url)
+            setImage(ipfsReplacer(json.image || json.image_url))
           } catch (error) {
             setImage(text)
           }
@@ -25,7 +27,7 @@ export const useTokenImage = ({ id = '', uri = '' } = {}) => {
           try {
             const json = JSON.parse(text)
 
-            setImage(json.image || json.image_url)
+            setImage(ipfsReplacer(json.image || json.image_url))
           } catch (error) {
             setImage(text)
           }

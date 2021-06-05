@@ -2,6 +2,7 @@ import gql from 'graphql-tag'
 import fetch from 'cross-fetch'
 
 import { initializeApollo } from '../../../apollo/client'
+import ipfsReplacer from '../../../utils/ipfsReplacer'
 
 export default async function handler(req, res) {
   const { id } = req.query
@@ -20,7 +21,7 @@ export default async function handler(req, res) {
   })
 
   if (result?.data?.token?.uri) {
-    const response = await fetch(result?.data?.token?.uri.replace(' ', ''))
+    const response = await fetch(ipfsReplacer(result?.data?.token?.uri.replace(' ', '')))
     const text = await response.text()
 
     try {
