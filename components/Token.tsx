@@ -13,9 +13,9 @@ export const Token = ({ id, uri, registry }) => {
             const json = JSON.parse(text)
 
             setImage(json.image || json.image_url)
-            console.log('json', json)
+            // console.log('json', json)
           } catch (error) {
-            console.log('text', text)
+            // console.log('text', text)
           }
         },
         (reason) => console.warn(reason),

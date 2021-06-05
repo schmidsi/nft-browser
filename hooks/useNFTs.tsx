@@ -18,7 +18,7 @@ export const useNFTs = ({ address }: { address: String }) => {
       }
     `,
     {
-      variables: { address: address.toLowerCase() },
+      variables: { address: address?.toLowerCase() },
     },
   )
 
