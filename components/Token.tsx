@@ -1,14 +1,21 @@
 import Link from 'next/link'
-import { useTokenImage } from '../hooks/useTokenImage'
 
-export const Token = ({ id, uri, registry, identifier }) => {
+import { useTokenImage } from '../hooks/useTokenImage'
+import { Owner } from '../components/Owner'
+
+export const Token = ({ id, uri, registry, identifier, owner }) => {
   const image = useTokenImage({ id, uri })
 
   return (
     <Link href={`/token/${id}`}>
       <a>
-        <div>
-          ${registry?.symbol}: #{identifier}
+        <div className="info">
+          <div>
+            ${registry?.symbol}: #{identifier}
+          </div>
+          <div className="owner">
+            <Owner address={owner?.id} />
+          </div>
         </div>
 
         <img src={image} />
@@ -28,7 +35,7 @@ export const Token = ({ id, uri, registry, identifier }) => {
               0 0 32px rgba(65, 120, 255, 0.24);
           }
 
-          div {
+          .info {
             position: absolute;
             top: 0;
             left: 0;
@@ -36,6 +43,11 @@ export const Token = ({ id, uri, registry, identifier }) => {
             width: 100%;
             padding: 20px 5px;
             background-color: #151c42c0;
+            font-size: 0.8em;
+          }
+
+          .owner {
+            margin-top: 10px;
           }
 
           a:hover div {

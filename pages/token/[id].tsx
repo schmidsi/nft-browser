@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 
 import { useTokenDetails } from '../../hooks/useTokenDetails'
 import { useTokenImage } from '../../hooks/useTokenImage'
-import { Owner } from '../../components/Owner'
+import { LinkedOwner } from '../../components/Owner'
 
 const Token = () => {
   const router = useRouter()
@@ -36,14 +36,14 @@ const Token = () => {
           </a>
         </div>
         <div>
-          Owner: <Owner address={token?.owner?.id} />
+          Owner: <LinkedOwner address={token?.owner?.id} enclosingDigits={8} />
         </div>
 
         <h2>Previous owners</h2>
         <ul>
           {token?.transfers?.map((transfer) => (
             <li>
-              <Owner address={transfer?.from?.id} />
+              <LinkedOwner address={transfer?.from?.id} enclosingDigits={8} />
             </li>
           ))}
         </ul>

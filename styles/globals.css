@@ -7,6 +7,10 @@ body {
   color: rgba(255, 255, 255, 0.96);
 }
 
+header {
+  margin-bottom: 10px;
+}
+
 h1,
 h2,
 h3 {

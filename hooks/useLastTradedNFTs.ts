@@ -4,7 +4,7 @@ export const useLastTradedNFTs = () => {
   const { loading, error, data } = useQuery(
     gql`
       {
-        transfers(first: 20, orderBy: timestamp, orderDirection: desc) {
+        transfers(first: 50, orderBy: timestamp, orderDirection: desc) {
           id
           timestamp
           token {
@@ -14,6 +14,9 @@ export const useLastTradedNFTs = () => {
             registry {
               symbol
               name
+            }
+            owner {
+              id
             }
           }
         }
