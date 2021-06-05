@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { useTokenImage } from '../hooks/useTokenImage'
 
 export const Token = ({ id, uri, registry }) => {
-  const image = useTokenImage(uri)
+  const image = useTokenImage({ id, uri })
 
   return (
     <Link href={`/token/${id}`}>

@@ -21,7 +21,11 @@ export const useLastTradedNFTs = () => {
     { pollInterval: 5000 },
   )
 
-  const nfts = data?.transfers?.map((transfer) => transfer.token) || []
+  const nfts =
+    data?.transfers?.map((transfer) => ({
+      ...transfer.token,
+      transferId: transfer.id,
+    })) || []
 
   return { loading, error, nfts }
 }

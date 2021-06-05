@@ -13,7 +13,7 @@ const Token = () => {
     id: id as string,
   })
 
-  const image = useTokenImage(token?.uri)
+  const image = useTokenImage(token)
 
   return (
     <div>

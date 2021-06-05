@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import fetch from 'cross-fetch'
 
-export const useTokenImage = (uri) => {
+export const useTokenImage = ({ id = '', uri = '' } = {}) => {
   const [image, setImage] = useState('')
 
   useEffect(() => {
@@ -13,12 +13,23 @@ export const useTokenImage = (uri) => {
             const json = JSON.parse(text)
 
             setImage(json.image || json.image_url)
-            // console.log('json', json)
           } catch (error) {
             setImage(text)
           }
         },
-        (reason) => console.warn(uri, reason),
+        async (reason) => {
+          // Try through API to circumvent CORS
+          const response = await fetch(`/api/metadata/${id}`)
+          const text = await response.text()
+
+          try {
+            const json = JSON.parse(text)
+
+            setImage(json.image || json.image_url)
+          } catch (error) {
+            setImage(text)
+          }
+        },
       )
     }
   }, [uri])

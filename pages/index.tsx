@@ -17,7 +17,7 @@ const Home = () => {
       <main>
         <Form />
         {nfts.map((nft) => (
-          <Token key={nft.id} {...nft} />
+          <Token key={nft.transferId} {...nft} />
         ))}
       </main>
     </div>
