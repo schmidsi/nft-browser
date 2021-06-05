@@ -28,6 +28,19 @@ const Header = () => (
   </header>
 )
 
+const Footer = () => (
+  <footer>
+    <a href="https://github.com/schmidsi/nft-browser" target="_blank">
+      Github
+    </a>
+    <style jsx>{`
+      a {
+        font-size: 0.8em;
+      }
+    `}</style>
+  </footer>
+)
+
 export default function App({ Component, pageProps }: AppProps) {
   const apolloClient = useApollo(pageProps)
 
@@ -35,6 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <ApolloProvider client={apolloClient}>
       <Header />
       <Component {...pageProps} />
+      <Footer />
     </ApolloProvider>
   )
 }
