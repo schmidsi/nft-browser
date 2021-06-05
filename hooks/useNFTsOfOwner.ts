@@ -8,6 +8,7 @@ export const useNFTsOfOwner = ({ address }: { address: String }) => {
           id
           tokens {
             id
+            identifier
             uri
             registry {
               symbol

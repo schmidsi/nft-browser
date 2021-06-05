@@ -1,13 +1,16 @@
 import Link from 'next/link'
 import { useTokenImage } from '../hooks/useTokenImage'
 
-export const Token = ({ id, uri, registry }) => {
+export const Token = ({ id, uri, registry, identifier }) => {
   const image = useTokenImage({ id, uri })
 
   return (
     <Link href={`/token/${id}`}>
       <a>
-        {id} {registry.name}
+        <div>
+          ${registry?.symbol}: #{identifier}
+        </div>
+
         <img src={image} />
         <style jsx>{`
           a {
@@ -17,14 +20,30 @@ export const Token = ({ id, uri, registry }) => {
             width: 200px;
             margin: 10px;
             overflow: hidden;
-            border: 1px solid grey;
-            padding: 5px;
+            text-align: center;
           }
 
-          img {
+          a:hover {
+            box-shadow: 0 0 80px rgba(192, 219, 255, 0.48),
+              0 0 32px rgba(65, 120, 255, 0.24);
+          }
+
+          div {
             position: absolute;
             top: 0;
             left: 0;
+            height: 100%;
+            width: 100%;
+            padding: 20px 5px;
+            background-color: #151c42c0;
+          }
+
+          a:hover div {
+            z-index: 10;
+          }
+
+          img {
+            position: relative;
             max-width: 100%;
             max-height: 100%;
           }

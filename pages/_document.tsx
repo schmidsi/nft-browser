@@ -15,6 +15,10 @@ class MyDocument extends Document {
             href="https://storage.googleapis.com/graph-fonts/EuclidCircular/fonts.css"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,500,700"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

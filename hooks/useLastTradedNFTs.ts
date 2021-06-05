@@ -9,6 +9,7 @@ export const useLastTradedNFTs = () => {
           timestamp
           token {
             id
+            identifier
             uri
             registry {
               symbol
