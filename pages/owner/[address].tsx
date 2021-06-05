@@ -21,7 +21,7 @@ const Owner = () => {
       </Head>
 
       <main>
-        <Form initialAddress={address} />
+        <Form initialAddress={address as string} />
         {nfts.map((nft) => (
           <Token key={nft.id} {...nft} />
         ))}

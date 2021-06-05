@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form'
 
 const EthereumAddressRegEx = /^0x[a-fA-F0-9]{40}$/
 
-export const Form = ({ initialAddress }) => {
+export const Form = ({ initialAddress = '' }) => {
   const router = useRouter()
   const {
     register,
