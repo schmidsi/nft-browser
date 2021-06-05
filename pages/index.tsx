@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react'
+import fetch from 'cross-fetch'
 import { gql, useQuery } from '@apollo/client'
 import Head from 'next/head'
 
@@ -28,20 +30,33 @@ const useNFTs = ({ address }: { address: String }) => {
   return { loading, error, nfts }
 }
 
-const Token = ({ id, uri, registry }) => (
-  <div>
-    {id} {registry.name}
-    <style jsx>{`
-      div {
-        display: inline-block;
-        height: 140px;
-        width: 140px;
-        margin: 5px;
-        overflow: hidden;
-      }
-    `}</style>
-  </div>
-)
+const Token = ({ id, uri, registry }) => {
+  const [image, setImage] = useState('')
+
+  useEffect(() => {
+    if (uri) {
+      fetch(uri).then(
+        (result) => console.log(id, uri, result),
+        (reason) => console.warn(reason),
+      )
+    }
+  }, [uri])
+
+  return (
+    <div>
+      {id} {registry.name}
+      <style jsx>{`
+        div {
+          display: inline-block;
+          height: 140px;
+          width: 140px;
+          margin: 5px;
+          overflow: hidden;
+        }
+      `}</style>
+    </div>
+  )
+}
 
 const Home = () => {
   const { loading, error, nfts } = useNFTs({
@@ -60,7 +75,7 @@ const Home = () => {
       <main>
         <input type="text" value="0x546457BBddf5e09929399768ab5a9d588cb0334d"></input>
         {nfts.map((nft) => (
-          <Token {...nft} />
+          <Token key={nft.id} {...nft} />
         ))}
       </main>
       <style jsx>{`
