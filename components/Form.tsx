@@ -29,7 +29,7 @@ export const Form = ({ initialAddress = '' }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      Enter an ethereum address:
+      Eyeball an Ethereum account 👀:
       <input
         type="text"
         defaultValue={initialAddress}
@@ -37,14 +37,19 @@ export const Form = ({ initialAddress = '' }) => {
       ></input>
       <style jsx>{`
         form {
-          width: 300px;
+          width: 320px;
           position: relative;
           margin: 2em auto;
         }
 
         input {
           width: 100%;
-          font-family: monospace;
+          font-size: 12px;
+          padding: 5px;
+          font-family: 'Roboto Mono';
+          background-color: rgba(255, 255, 255, 0.08);
+          border: none;
+          color: white;
         }
       `}</style>
     </form>
