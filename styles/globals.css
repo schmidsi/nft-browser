@@ -3,11 +3,14 @@ body {
   padding: 0;
   margin: 0;
   font-family: EuclidCircular, Arial, Helvetica, sans-serif;
+  background-color: #0c0a1d;
+  color: white;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  background-color: #151c42;
 }
 
 * {

@@ -29,6 +29,12 @@ const Token = () => {
         </h2>
         <img src={image} />
         <div>
+          Metadata URI:{' '}
+          <a target="_blank" href={token?.uri}>
+            {token?.uri}
+          </a>
+        </div>
+        <div>
           Owner:{' '}
           <Link href={`/owner/${token?.owner?.id}`}>
             <a>{token?.owner?.id}</a>
