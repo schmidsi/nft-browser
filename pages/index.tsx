@@ -23,15 +23,32 @@ const useNFTs = ({ address }: { address: String }) => {
     },
   )
 
-  return { loading, error, data }
+  const nfts = data?.account?.tokens || []
+
+  return { loading, error, nfts }
 }
 
+const Token = ({ id, uri, registry }) => (
+  <div>
+    {id} {registry.name}
+    <style jsx>{`
+      div {
+        display: inline-block;
+        height: 140px;
+        width: 140px;
+        margin: 5px;
+        overflow: hidden;
+      }
+    `}</style>
+  </div>
+)
+
 const Home = () => {
-  const { loading, error, data } = useNFTs({
+  const { loading, error, nfts } = useNFTs({
     address: '0x546457BBddf5e09929399768ab5a9d588cb0334d',
   })
 
-  console.log({ loading, error, data })
+  console.log({ loading, error, nfts })
 
   return (
     <div>
@@ -42,6 +59,9 @@ const Home = () => {
 
       <main>
         <input type="text" value="0x546457BBddf5e09929399768ab5a9d588cb0334d"></input>
+        {nfts.map((nft) => (
+          <Token {...nft} />
+        ))}
       </main>
       <style jsx>{`
         main {
