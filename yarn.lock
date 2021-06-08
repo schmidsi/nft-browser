@@ -713,6 +713,20 @@
     "@n1ru4l/graphql-live-query" "0.7.1"
     "@n1ru4l/in-memory-live-query-store" "0.6.4"
 
+"@graphql-mesh/transform-naming-convention@^0.6.49":
+  version "0.6.49"
+  resolved "https://registry.yarnpkg.com/@graphql-mesh/transform-naming-convention/-/transform-naming-convention-0.6.49.tgz#7368c7a38346c415f54d1f0e0b20afc3a57868ca"
+  integrity sha512-rmid4zVEWctfTg+9bO7g4zUXq0UXzPtglUtHMhJ2FTF5Aa+bgn9vfGsmJ8knDqc9AR9Vnm8v8tW66WmzWaZzKw==
+  dependencies:
+    "@graphql-mesh/types" "0.42.0"
+    "@graphql-mesh/utils" "0.12.0"
+    "@graphql-tools/delegate" "7.1.5"
+    "@graphql-tools/utils" "7.10.0"
+    "@graphql-tools/wrap" "7.0.8"
+    change-case "4.1.2"
+    lower-case "2.0.2"
+    upper-case "2.0.2"
+
 "@graphql-mesh/types@0.42.0":
   version "0.42.0"
   resolved "https://registry.yarnpkg.com/@graphql-mesh/types/-/types-0.42.0.tgz#1f1637632aef28a17b1afeab9fcf4af37e17aed7"
@@ -3096,7 +3110,7 @@ lower-case-first@^2.0.2:
   dependencies:
     tslib "^2.0.3"
 
-lower-case@^2.0.2:
+lower-case@2.0.2, lower-case@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/lower-case/-/lower-case-2.0.2.tgz#6fa237c63dbdc4a82ca0fd882e4722dc5e634e28"
   integrity sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==
@@ -4477,7 +4491,7 @@ upper-case-first@^2.0.2:
   dependencies:
     tslib "^2.0.3"
 
-upper-case@^2.0.2:
+upper-case@2.0.2, upper-case@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/upper-case/-/upper-case-2.0.2.tgz#d89810823faab1df1549b7d97a76f8662bae6f7a"
   integrity sha512-KgdgDGJt2TpuwBUIjgG6lzw2GWFRCW9Qkfkiv0DxqHHLYJHmtmdUIKcZd8rHgFSjopVTlw6ggzCm1b8MFQwikg==
