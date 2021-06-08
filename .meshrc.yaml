@@ -1,3 +1,6 @@
+require:
+  - ts-node/register/transpile-only
+
 sources:
   - name: EIP721
     handler:
@@ -21,4 +24,4 @@ additionalTypeDefs: |
     standard: Standard!
   }
 additionalResolvers:
-  - ./mesh/additionalResolvers.js
+  - ./mesh/additionalResolvers.ts
