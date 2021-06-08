@@ -1,0 +1,5 @@
+sources:
+  - name: EIP721
+    handler:
+      graphql:
+        endpoint: https://api.thegraph.com/subgraphs/name/amxx/eip721-subgraph

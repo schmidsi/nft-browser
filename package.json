@@ -5,13 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "mesh:serve": "graphql-mesh serve"
   },
   "dependencies": {
     "@apollo/client": "3.1.1",
+    "@graphql-mesh/cli": "^0.30.1",
+    "@graphql-mesh/graphql": "^0.17.10",
     "cross-fetch": "^3.1.4",
     "deepmerge": "^4.2.2",
-    "graphql": "^15.3.0",
+    "graphql": "^15.5.0",
     "lodash": "^4.17.20",
     "next": "^10.2.3",
     "prop-types": "^15.6.2",
