@@ -17,7 +17,8 @@ function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: `${NEXT_PUBLIC_ROOT_URL}/api/graphql`, // Server URL (must be absolute)
+      // uri: `${NEXT_PUBLIC_ROOT_URL}/api/graphql`, // Server URL (must be absolute)
+      uri: 'https://api.thegraph.com/subgraphs/name/amxx/eip721-subgraph',
       credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache({
