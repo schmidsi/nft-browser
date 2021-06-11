@@ -7,13 +7,17 @@ import isEqual from 'lodash/isEqual'
 
 export const APOLLO_STATE_PROP_NAME = '__APOLLO_STATE__'
 
+const { NEXT_PUBLIC_VERCEL_URL = 'http://localhost:3000' } = process.env
+
+console.log('ENV VARS', process.browser, NEXT_PUBLIC_VERCEL_URL)
+
 let apolloClient
 
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: new HttpLink({
-      uri: 'https://api.thegraph.com/subgraphs/name/amxx/eip721-subgraph', // Server URL (must be absolute)
+      uri: `${NEXT_PUBLIC_VERCEL_URL}/api/graphql`, // Server URL (must be absolute)
       credentials: 'same-origin', // Additional fetch() options like `credentials` or `headers`
     }),
     cache: new InMemoryCache({
