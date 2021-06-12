@@ -6,8 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "mesh:serve": "graphql-mesh serve",
-    "mesh:codegen": "graphql-mesh typescript --output ./mesh/generated.ts"
+    "mesh:serve": "graphql-mesh serve --require ts-node/register/transpile-only",
+    "mesh:codegen": "graphql-mesh typescript --output ./mesh/generated.ts --require ts-node/register/transpile-only"
   },
   "dependencies": {
     "@apollo/client": "3.1.1",

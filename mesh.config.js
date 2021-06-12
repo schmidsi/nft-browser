@@ -1,5 +1,4 @@
 module.exports = {
-  require: ['ts-node/register/transpile-only'],
   sources: [
     {
       name: 'EIP721',
@@ -35,5 +34,5 @@ module.exports = {
     'extend type Token {\n' +
     '  standard: Standard!\n' +
     '}\n',
-  additionalResolvers: ['./mesh/additionalResolvers.ts'],
+  additionalResolvers: ['./mesh/additionalResolvers'],
 }
