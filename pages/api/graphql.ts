@@ -1,10 +1,12 @@
-import path from 'path'
-import { validateConfig, processConfig, findAndParseConfig } from '@graphql-mesh/config'
+import { validateConfig, processConfig } from '@graphql-mesh/config'
 import { getMesh } from '@graphql-mesh/runtime'
 import { ApolloServer } from 'apollo-server-micro'
 
+import rawMeshConfig from '../../mesh.config'
+
 const createApolloServer = async () => {
-  const meshConfig = await findAndParseConfig()
+  validateConfig(rawMeshConfig)
+  const meshConfig = await processConfig(rawMeshConfig, { dir: process.cwd() })
   const { schema, contextBuilder } = await getMesh(meshConfig)
   const apolloServer = new ApolloServer({
     schema,
