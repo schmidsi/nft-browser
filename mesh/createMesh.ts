@@ -6,7 +6,7 @@ import rawMeshConfig from '../mesh.config'
 const preImports = {
   '@graphql-mesh/transform-naming-convention': require('@graphql-mesh/transform-naming-convention'),
   '@graphql-mesh/graphql': require('@graphql-mesh/graphql'),
-  [`${process.cwd()}/mesh/additionalResolvers`]: require('../../mesh/additionalResolvers'),
+  [`${process.cwd()}/mesh/additionalResolvers`]: require('../mesh/additionalResolvers'),
 }
 
 const importFn = (moduleId: string) => {
