@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".meshrc.yaml"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "./meshrc.yaml"],
   "exclude": ["node_modules"]
 }
