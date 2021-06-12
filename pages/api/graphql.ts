@@ -5,7 +5,12 @@ import { ApolloServer } from 'apollo-server-micro'
 const createApolloServer = async () => {
   const meshConfig = await findAndParseConfig()
   const { schema, contextBuilder } = await getMesh(meshConfig)
-  const apolloServer = new ApolloServer({ schema, context: contextBuilder })
+  const apolloServer = new ApolloServer({
+    schema,
+    context: contextBuilder,
+    introspection: true,
+    playground: true,
+  })
   return apolloServer
 }
 
