@@ -6,9 +6,11 @@ import { ApolloServer } from 'apollo-server-micro'
 import meshConfigYaml from '../../meshrc.yaml'
 
 const preImports = {
+  typescript: require('typescript'),
+  '@graphql-mesh/transform-naming-convention': require('@graphql-mesh/transform-naming-convention'),
+  '@graphql-mesh/graphql': require('@graphql-mesh/graphql'),
   'ts-node/register/transpile-only': require('ts-node/register/transpile-only'),
   [`${process.cwd()}/mesh/additionalResolvers.ts`]: require('../../mesh/additionalResolvers'),
-  // [`${process.cwd()}/namingConvention`]: require('@graphql-mesh/transform-naming-convention'),
 }
 
 console.log(meshConfigYaml)

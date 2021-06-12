@@ -11,7 +11,7 @@ sources:
       graphql:
         endpoint: https://api.thegraph.com/subgraphs/name/amxx/eip1155-subgraph
 transforms:
-  - mesh/additionalResolvers.ts:
+  - namingConvention:
       typeNames: pascalCase
       enumValues: camelCase
       fieldNames: camelCase
