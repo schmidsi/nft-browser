@@ -23,12 +23,6 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <script
-            id="ze-snippet"
-            src="https://static.zdassets.com/ekr/snippet.js?key=e71b07ff-2691-45dc-980f-cf6c0aad37b6"
-          >
-            {' '}
-          </script>
         </body>
       </Html>
     )
