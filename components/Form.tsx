@@ -26,7 +26,10 @@ export const Form = ({ initialAddress = '' }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      Eyeball an Ethereum account 👀:
+      <div className="image-holder">
+        <img src="/img/search.png" />
+      </div>
+      Enter Ethereum address to check:
       <input
         type="text"
         defaultValue={initialAddress}
@@ -44,10 +47,21 @@ export const Form = ({ initialAddress = '' }) => {
           width: 100%;
           font-size: 12px;
           padding: 5px;
+          font-size: 14px;
           font-family: 'Roboto Mono';
           background-color: rgba(255, 255, 255, 0.08);
-          border: none;
-          color: white;
+          border: 1px solid #0c0a1d;
+          color: #0c0a1d;
+        }
+
+        .image-holder {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 1em;
+        }
+
+        img {
+          width: 66%;
         }
       `}</style>
     </form>

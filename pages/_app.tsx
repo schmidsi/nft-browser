@@ -9,7 +9,7 @@ const Header = () => (
   <header>
     <Link href="/">
       <a>
-        <img src="https://thegraph.com/explorer/images/search-icon.svg" /> NFT Browser
+        <img src="/img/search@3x.svg" /> NFT Browser
       </a>
     </Link>
     <style jsx>{`
@@ -17,7 +17,7 @@ const Header = () => (
         background-color: transparent;
         font-size: 14px;
         font-weight: 600;
-        text-shadow: 0 0 80px rgba(192, 219, 255, 0.48), 0 0 32px rgba(65, 120, 255, 0.24);
+        text-shadow: 0 0 80px rgba(22, 25, 29, 0.48), 0 0 32px rgba(1, 2, 5, 0.24);
       }
 
       img {

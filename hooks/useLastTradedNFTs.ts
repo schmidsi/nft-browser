@@ -20,6 +20,11 @@ export const useLastTradedNFTs = () => {
             }
           }
         }
+        _meta {
+          block {
+            number
+          }
+        }
       }
     `,
     { pollInterval: 5000 },
@@ -31,5 +36,7 @@ export const useLastTradedNFTs = () => {
       transferId: transfer.id,
     })) || []
 
-  return { loading, error, nfts }
+  const blockNumber = data?._meta?.block?.number || null
+
+  return { loading, error, nfts, blockNumber }
 }

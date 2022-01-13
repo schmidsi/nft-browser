@@ -57,6 +57,7 @@ export const Token = ({ id, uri, contract, identifier, owner }) => {
             width: 100%;
             padding: 20px 5px;
             background-color: #151c42c0;
+            color: white;
             font-size: 0.8em;
           }
 

@@ -3,8 +3,8 @@ body {
   padding: 10px;
   margin: 0;
   font-family: EuclidCircular, Arial, Helvetica, sans-serif;
-  background-color: #0c0a1d;
-  color: rgba(255, 255, 255, 0.96);
+  background-color: white;
+  color: #0c0a1d;
 }
 
 header {
@@ -14,15 +14,18 @@ header {
 h1,
 h2,
 h3 {
-  text-shadow: 0 0 80px rgba(192, 219, 255, 0.48), 0 0 32px rgba(65, 120, 255, 0.24);
+  text-shadow: 0 0 80px rgba(22, 25, 29, 0.48), 0 0 32px rgba(1, 2, 5, 0.24);
 }
 
 a {
   color: inherit;
   text-decoration: none;
-  background-color: #151c42;
 }
 
 * {
   box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
 }

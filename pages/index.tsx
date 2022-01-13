@@ -5,7 +5,7 @@ import { Token } from '../components/Token'
 import { Form } from '../components/Form'
 
 const Home = () => {
-  const { loading, error, nfts } = useLastTradedNFTs()
+  const { loading, error, nfts, blockNumber } = useLastTradedNFTs()
 
   return (
     <div>
@@ -16,8 +16,8 @@ const Home = () => {
 
       <main>
         <Form />
-        <h1>Last transferred NFTs:</h1>
-        <p>It automatically refreshes every block ...</p>
+        <h1>Last 10 transferred NFTs:</h1>
+        <p>It automatically refreshes every block. Last block: {blockNumber}</p>
         {nfts.map((nft) => (
           <Token key={nft.transferId} {...nft} />
         ))}
