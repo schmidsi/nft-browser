@@ -26,9 +26,6 @@ export const Form = ({ initialAddress = '' }) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="image-holder">
-        <img src="/img/search.png" />
-      </div>
       Enter Ethereum address to check:
       <input
         type="text"

@@ -18,10 +18,17 @@ const Home = () => {
         <Form />
         <h1>Last 10 transferred NFTs:</h1>
         <p>It automatically refreshes every block. Last block: {blockNumber}</p>
-        {nfts.map((nft) => (
-          <Token key={nft.transferId} {...nft} />
-        ))}
+        <div className="holder">
+          {nfts.map((nft) => (
+            <Token key={nft.transferId} {...nft} />
+          ))}
+        </div>
       </main>
+      <style jsx>{`
+        .holder {
+          margin: 0 -10px;
+        }
+      `}</style>
     </div>
   )
 }
