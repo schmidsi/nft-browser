@@ -8,16 +8,13 @@ import type { AppProps } from 'next/app'
 const Header = () => (
   <header>
     <Link href="/">
-      <a>
-        <img src="/img/search@3x.svg" /> NFT Browser
-      </a>
+      <a>NFT Browser</a>
     </Link>
     <style jsx>{`
       a {
         background-color: transparent;
         font-size: 14px;
         font-weight: 600;
-        text-shadow: 0 0 80px rgba(22, 25, 29, 0.48), 0 0 32px rgba(1, 2, 5, 0.24);
       }
 
       img {

@@ -56,7 +56,7 @@ export const Token = ({ id, uri, contract, identifier, owner }) => {
             height: 100%;
             width: 100%;
             padding: 20px 5px;
-            background-color: #151c42c0;
+            background-color: rgba(0, 0, 0, 0.8);
             color: white;
             font-size: 0.8em;
           }
@@ -79,7 +79,7 @@ export const Token = ({ id, uri, contract, identifier, owner }) => {
             height: 100%;
             width: 100%;
             z-index: 5;
-            background-color: #151c42;
+            background-color: black;
           }
 
           img {
