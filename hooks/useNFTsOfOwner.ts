@@ -6,11 +6,11 @@ export const useNFTsOfOwner = ({ address }: { address: String }) => {
       query NFTs($address: String!) {
         account(id: $address) {
           id
-          tokens {
+          ERC721tokens {
             id
             identifier
             uri
-            registry {
+            contract {
               symbol
               name
             }
@@ -23,7 +23,7 @@ export const useNFTsOfOwner = ({ address }: { address: String }) => {
     },
   )
 
-  const nfts = data?.account?.tokens || []
+  const nfts = data?.account?.ERC721tokens || []
 
   return { loading, error, nfts }
 }

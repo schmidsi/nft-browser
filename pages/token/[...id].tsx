@@ -8,7 +8,9 @@ import { LinkedOwner } from '../../components/Owner'
 
 const Token = () => {
   const router = useRouter()
-  const { id } = router.query
+  const { id: ids } = router.query
+
+  const id = ids?.length > 0 ? (ids as string[]).join('/') : ids
 
   const { loading, error, token } = useTokenDetails({
     id: id as string,
@@ -24,9 +26,9 @@ const Token = () => {
       </Head>
 
       <main>
-        <h1>{token?.registry?.name}</h1>
+        <h1>{token?.contract?.name}</h1>
         <h2>
-          ${token?.registry?.symbol}: #{token?.identifier}
+          ${token?.contract?.symbol}: #{token?.identifier}
         </h2>
         <img src={image} />
         <div>

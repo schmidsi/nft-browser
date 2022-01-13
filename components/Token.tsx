@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useTokenImage } from '../hooks/useTokenImage'
 import { Owner } from '../components/Owner'
 
-export const Token = ({ id, uri, registry, identifier, owner }) => {
+export const Token = ({ id, uri, contract, identifier, owner }) => {
   const image = useTokenImage({ id, uri })
 
   return (
@@ -12,7 +12,7 @@ export const Token = ({ id, uri, registry, identifier, owner }) => {
         <div className="holder">
           <div className="info">
             <div>
-              ${registry?.symbol}: #{identifier}
+              ${contract?.symbol}: #{identifier}
             </div>
             <div className="owner">
               <Owner address={owner?.id} />

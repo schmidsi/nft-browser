@@ -4,13 +4,13 @@ export const useTokenDetails = ({ id }: { id: String }) => {
   const { loading, error, data } = useQuery(
     gql`
       query TokenDetails($id: String!) {
-        token(id: $id) {
+        erc721Token(id: $id) {
           id
           identifier
           owner {
             id
           }
-          registry {
+          contract {
             id
             name
             symbol
@@ -36,7 +36,7 @@ export const useTokenDetails = ({ id }: { id: String }) => {
     },
   )
 
-  const token = data?.token
+  const token = data?.erc721Token
 
   return { loading, error, token }
 }

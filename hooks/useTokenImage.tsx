@@ -16,6 +16,7 @@ export const useTokenImage = ({ id = '', uri = '' } = {}) => {
 
             setImage(ipfsReplacer(json.image || json.image_url))
           } catch (error) {
+            console.warn(error)
             setImage(text)
           }
         },
