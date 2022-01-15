@@ -18,6 +18,7 @@ const Home = () => {
 
       <main>
         <Form />
+        {error && <div className="error">{error}</div>}
         {loading ? (
           <Loader />
         ) : (
@@ -35,6 +36,9 @@ const Home = () => {
       <style jsx>{`
         .holder {
           margin: 0 -10px;
+        }
+        .error {
+          color: red;
         }
       `}</style>
     </div>
