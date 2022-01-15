@@ -18,7 +18,12 @@ const Home = () => {
 
       <main>
         <Form />
-        {error && <div className="error">{error}</div>}
+        {error && (
+          <div className="error">
+            {error.name} {error.message}{' '}
+            <button onClick={() => window.location.reload()}>Try again</button>
+          </div>
+        )}
         {loading ? (
           <Loader />
         ) : (

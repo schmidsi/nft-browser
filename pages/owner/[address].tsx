@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 
 import { Form } from '../../components/Form'
+import Loader from '../../components/Loader'
 import { Owner } from '../../components/Owner'
 import { Token } from '../../components/Token'
 import { useNFTsOfOwner } from '../../hooks/useNFTsOfOwner'
@@ -26,6 +27,13 @@ const OwnerPage = () => {
         <h1>
           NFTs owned by <Owner address={address} />:
         </h1>
+        {loading && <Loader />}
+        {error && (
+          <div className="error">
+            {error.name} {error.message}{' '}
+            <button onClick={() => window.location.reload()}>Try again</button>
+          </div>
+        )}
         {nfts.map((nft) => (
           <Token key={nft.id} {...nft} />
         ))}

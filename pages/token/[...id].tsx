@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { useTokenDetails } from '../../hooks/useTokenDetails'
 import { useTokenImage } from '../../hooks/useTokenImage'
 import { LinkedOwner } from '../../components/Owner'
+import Loader from '../../components/Loader'
 
 const Token = () => {
   const router = useRouter()
@@ -27,6 +28,13 @@ const Token = () => {
 
       <main>
         <h1>{token?.contract?.name}</h1>
+        {loading && <Loader />}
+        {error && (
+          <div className="error">
+            {error.name} {error.message}{' '}
+            <button onClick={() => window.location.reload()}>Try again</button>
+          </div>
+        )}
         <h2>
           ${token?.contract?.symbol}: #{token?.identifier}
         </h2>
