@@ -1,10 +1,10 @@
 import { gql, useQuery } from '@apollo/client'
 
-export const useLastTradedNFTs = () => {
+export const useLastTradedNFTs = ({ first }) => {
   const { loading, error, data } = useQuery(
     gql`
-      {
-        erc721Transfers(first: 10, orderBy: timestamp, orderDirection: desc) {
+      query LastTransfers($first: Int!) {
+        erc721Transfers(first: $first, orderBy: timestamp, orderDirection: desc) {
           id
           timestamp
           token {
@@ -27,7 +27,7 @@ export const useLastTradedNFTs = () => {
         }
       }
     `,
-    { pollInterval: 5000 },
+    { pollInterval: 5000, variables: { first } },
   )
 
   const nfts =
